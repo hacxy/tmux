@@ -1,0 +1,5 @@
+# tmux-nerd-font-window-name 用户配置
+# 覆盖插件 defaults.yml（默认 show-name: true），tab 栏只显示图标不显示名称
+# 其余配置项（图标映射、fallback 等）沿用插件 defaults.yml
+config:
+  show-name: false
