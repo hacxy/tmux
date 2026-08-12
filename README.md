@@ -1,18 +1,10 @@
-# Tmux Configure
+# ~/.config/tmux/tmux.conf
 
-<!--toc:start-->
-- [Tmux Configure](#tmux-configure)
-  - [Install Tpm](#install-tpm)
-<!--toc:end-->
-
-## Install Tpm
-
+## Install
+Once everything has been installed it's time to run TPM, install first:
 ```bash
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-prefix: `<C-a>`
-
-- Install Plugin
-
-prefix I
+## Run
+`Ctrl+I`
