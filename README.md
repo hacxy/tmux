@@ -259,6 +259,17 @@ tmux
 | `@catppuccin_status_modules_right` | `directory`              | 状态栏右侧显示当前路径                  |
 | `@catppuccin_status_fill`          | `icon`                   | 模块带图标填充                          |
 
+**状态栏透明 / 配色切换(`prefix+T`)**:
+
+本配置默认启用**自定义状态栏样式**(背景透明 + 个性化配色),定义在 `tmux.status-custom.conf`。按 `prefix+T` 可在两种样式间**即时切换**:
+
+| 样式        | 状态栏外观                                        |
+| ----------- | ------------------------------------------------- |
+| 自定义(默认) | 背景透明(跟随终端背景),窗口 tab 为 `#404159` 配色 |
+| catppuccin 原始 | mocha 深色背景 `#1e1e2e`,插件默认配色           |
+
+> 透明的前提是终端本身开了背景透明(iTerm2 的 Transparency / kitty 的 `background_opacity`)。切换脚本位于 `scripts/toggle-status.sh`,切回原始样式时直接重新执行 catppuccin 插件生成默认值,因此插件更新不会影响此功能。
+
 ---
 
 ## 自动保存与恢复
@@ -284,14 +295,17 @@ tmux
 ~/.config/tmux/
 ├── tmux.conf # 主配置:选项、主题、插件声明(TPM)
 ├── tmux.reset.conf # 键位自定义:prefix、分屏、调整大小等绑定
+├── tmux.status-custom.conf # 状态栏自定义样式(透明+改色),prefix+T 切换
 ├── plugins/ # TPM 管理的插件(不要手动改)
 └── scripts/
-└── cal.sh # 会议提醒脚本(基于 icalBuddy,默认注释未启用)
+    ├── toggle-status.sh # 状态栏样式切换(prefix+T)
+    └── cal.sh # 会议提醒脚本(基于 icalBuddy,默认注释未启用)
 
 ```
 
 - 想改快捷键 → 编辑 `tmux.reset.conf`,改完 `prefix+R`
 - 想改主题 / 状态栏 / 插件选项 → 编辑 `tmux.conf`
+- 想改状态栏配色 / 透明效果 → 编辑 `tmux.status-custom.conf`
 - 插件本身会覆盖部分设置,若发现改了没生效,检查是否被插件在 `run '~/.config/tmux/plugins/tpm/tpm'` 之后重新覆盖
 
 ---
