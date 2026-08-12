@@ -263,10 +263,10 @@ tmux
 
 本配置默认启用**自定义状态栏样式**(背景透明 + 个性化配色),定义在 `tmux.status-custom.conf`。按 `prefix+T` 可在两种样式间**即时切换**:
 
-| 样式        | 状态栏外观                                        |
-| ----------- | ------------------------------------------------- |
-| 自定义(默认) | 背景透明(跟随终端背景),窗口 tab 为 `#404159` 配色 |
-| catppuccin 原始 | mocha 深色背景 `#1e1e2e`,插件默认配色           |
+| 样式            | 状态栏外观                                        |
+| --------------- | ------------------------------------------------- |
+| 自定义(默认)    | 背景透明(跟随终端背景),窗口 tab 为 `#404159` 配色 |
+| catppuccin 原始 | mocha 深色背景 `#1e1e2e`,插件默认配色             |
 
 > 透明的前提是终端本身开了背景透明(iTerm2 的 Transparency / kitty 的 `background_opacity`)。切换脚本位于 `scripts/toggle-status.sh`,切回原始样式时直接重新执行 catppuccin 插件生成默认值,因此插件更新不会影响此功能。
 
@@ -313,7 +313,7 @@ tmux
 ## 需要按个人情况调整的地方
 
 ```tmux
-set -g @sessionx-custom-paths '/Users/omerxx/dotfiles'   # ← 改为你自己的常用目录(可空格分隔多个)
+set -g @sessionx-custom-paths '/Users/hacxy/dotfiles'   # ← 改为你自己的常用目录(可空格分隔多个)
 set -g @sessionx-x-path '~/dotfiles'                     # ← 改为自己的目录
 ```
 
